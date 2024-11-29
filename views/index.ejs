@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Currency Converter</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Currency Converter</h1>
+    <p>Please enter in caps</p>
+    <form action="/convert" method="POST">
+      <div>
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" id="amount" step="0.01" required>
+      </div>
+      <div>
+        <label for="fromCurrency">From:</label>
+        <input type="text" name="fromCurrency" id="fromCurrency" placeholder="e.g., USD" required>
+      </div>
+      <div>
+        <label for="toCurrency">To:</label>
+        <input type="text" name="toCurrency" id="toCurrency" placeholder="e.g., EUR" required>
+      </div>
+      <button type="submit">Convert</button>
+    </form>
+
+    <% if (result) { %>
+      <div class="result">
+        <h2>Result:</h2>
+        <p><%= result %></p>
+      </div>
+    <% } %>
+
+    <% if (error) { %>
+      <div class="error">
+        <h2>Error:</h2>
+        <p><%= error %></p>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>
